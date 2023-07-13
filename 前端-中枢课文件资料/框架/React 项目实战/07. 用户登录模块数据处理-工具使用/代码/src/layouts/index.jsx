@@ -1,0 +1,24 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from 'antd';
+import { selectLayout } from 'utils/selectLayout';
+import BaseLayout from './BaseLayout';
+import LoginLayout from './LoginLayout';
+//- 创建loading组件，引入组件
+import Loading from 'components/Loading';
+import { useSelector } from 'umi';
+
+const Layout = ({ children, history, location }) => {
+  const layoutMap = { BaseLayout, LoginLayout };
+  const loading = useSelector((state) => state.loading);
+  console.log(loading)
+  const Container = layoutMap[selectLayout(location.pathname)];
+  return (
+    <Container>
+      <Loading isShow={loading.effects['user/login']}/>
+      {children}
+    </Container>
+  );
+};
+
+export default Layout;
