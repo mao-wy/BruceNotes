@@ -1,0 +1,23 @@
+.DS_Store
+node_modules
+前端-笔面试甄选文件资料/前端三阶段高薪大厂笔面试专题直播回放
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+package-lock.json
